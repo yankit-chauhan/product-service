@@ -24,7 +24,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Product getById(@PathVariable UUID id) {
+    public Product getById(@PathVariable("id") UUID id) {
         return service.getById(id);
     }
 
@@ -34,7 +34,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public Product update(@PathVariable UUID id, @Valid @RequestBody ProductRequest request) {
+    public Product update(@PathVariable("id") UUID id, @Valid @RequestBody ProductRequest request) {
         return service.update(id, request);
     }
 
