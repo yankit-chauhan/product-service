@@ -65,10 +65,10 @@ jobs:
           kubectl -n ${K8S_NAMESPACE} set image deployment/${DEPLOYMENT_NAME} \
             ${DEPLOYMENT_NAME}=${REGION}-docker.pkg.dev/${PROJECT_ID}/${GAR_REPOSITORY}/${IMAGE_NAME}:${GITHUB_SHA}
 
-      - name: Add change cause annotation
+      - name: Add change cause
         run: |
           kubectl -n ${K8S_NAMESPACE} annotate deployment/${DEPLOYMENT_NAME} \
-            kubernetes.io/change-cause="Deploy commit ${GITHUB_SHA}" \
+            kubernetes.io/change-cause="Deploy: ${{ github.event.head_commit.message }}" \
             --overwrite
 
       - name: Wait for rollout
