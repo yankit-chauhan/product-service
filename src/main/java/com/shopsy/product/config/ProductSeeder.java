@@ -41,7 +41,7 @@ public class ProductSeeder {
               "Laptops",
               "114999.00",
               7,
-              "https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=1200&q=80"
+              "https://images.unsplash.com/photo-1710905018864-d585574d79f8?auto=format&fit=crop&w=1200&q=80"
             ));
 
             repository.save(create(
